@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公式计算器</title>
+    <script>
+        function calculate() {
+            // 获取输入值
+            const t = parseFloat(document.getElementById('t').value);
+            const U = parseFloat(document.getElementById('U').value);
+
+            // 计算公式 (例如：output = input1 + input2)
+            const q1 = 1.0218/(Math.pow((t*(1+0.0219*Math.sqrt(t))),1.5)*U)*1e5;
+            const q = q1.toFixed(4);
+            const n = Math.round(q/1.602);
+            const e1 = q/n;
+            const e = e1.toFixed(4);
+
+            // 显示输出结果
+            document.getElementById('q').innerText = 'q结果: ' + q;
+            document.getElementById('n').innerText = 'n结果: ' + n;
+            document.getElementById('e').innerText = 'e结果: ' + e;
+
+            // 清空输入框
+            document.getElementById('t').value = '';
+            document.getElementById('U').value = '';
+        }
+    </script>
+</head>
+<body>
+    <h1>公式计算器</h1>
+    <label for="t">输入1:</label>
+    <input type="number" id="t" name="t"><br><br>
+    <label for="U">输入2:</label>
+    <input type="number" id="U" name="U"><br><br>
+    <button onclick="calculate()">计算</button>
+    <p id="q">q结果: </p>
+    <p id="n">n结果: </p>
+    <p id="e">e结果: </p>
+    <img src="https://s2.loli.net/2024/09/26/ZlCoprahiQYsISE.jpg" alt="描述文本" style="max-width: 100%; height: auto;">
+</body>
+</html>

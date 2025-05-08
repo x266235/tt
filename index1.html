@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>Test</title> 
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+<style type="text/css">
+  .important {
+    font-weight:bold;
+    font-size:xx-large;
+
+  }
+</style>
+<script>
+let t = 100;
+$(document).ready(function(){
+  $("#btn").click(function(){
+    
+    $(".tt").prepend("<p id='we'>文本-1。</p>")
+    $(".tt").addClass("important")
+  }); 
+  $("#btn2").click(function(){
+    window.location.href= "https://www.baidu.com"
+  });
+});
+</script>
+</head>
+
+<body>
+<h2>这是一个标题</h2>
+<p class="tt" style="position:relative">这是一个段落。</p>
+<p>这是另一个段落。<input type="text" id="ip"></p>
+<button id="btn">点我</button>
+<button id="btn2">删除</button>
+</body>
+</html>
